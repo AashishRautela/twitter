@@ -12,8 +12,8 @@ app.use(express.static("public"))
 
 
 //import routes
- 
-
+const routes=require("./routes/index.js");
+app.use("/",routes);
 
 //use routes
 

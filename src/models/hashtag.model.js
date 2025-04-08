@@ -15,6 +15,6 @@ const hashTagSchema=new mongoose.Schema({
     timestamps:true
 })
 
-const HashTag= new mongoose.Model("HashTag",hashTagSchema);
+const HashTag=mongoose.model("HashTag",hashTagSchema);
 
 module.exports=HashTag;

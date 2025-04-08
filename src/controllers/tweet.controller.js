@@ -1,7 +1,7 @@
 const { StatusCodes } = require("http-status-codes");
 const { TweetService } = require("../service/index.js")
 const {SuccessResponse}=require("../utils/common/index.js");
-const {asyncHandler}=require("../utils/helpers/asyncHandler.js")
+const {asyncHandler}=require("../utils/helpers")
 const AppError = require("../utils/errors/appError.js");
 
 module.exports.createTweet = asyncHandler(async (req, res) => {

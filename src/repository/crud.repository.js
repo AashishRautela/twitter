@@ -18,6 +18,16 @@ class CrudRepository{
         }
         return response;
     }
+
+    async find(data){
+        const response=this.model.find(data);
+        return response;
+    }
+
+    async bulkCreate(data){
+        const response=await this.model.insertMany(data);
+        return response;
+    }
 }
 
 module.exports=CrudRepository

@@ -7,11 +7,13 @@ module.exports.createTweet=async(data)=>{
     try {
         const {content}=data;
 
-        const hastags=content.match(/#[a-zA-Z0-9]+/g);
+        const hastags=content.match(/#[a-zA-Z0-9]+/g) || [];
+        console.log('hastags', hastags)
         const filteredHasTags=hastags.map((tag)=>tag.substring(1));
         const tweet=await TweetRepository.create(data);
         return tweet;
     } catch (error) {
+        let errors=[];
         if(error instanceof AppError) throw error;
 
         throw new AppError(["Something went wronh while creating tweet"],StatusCodes.INTERNAL_SERVER_ERROR)

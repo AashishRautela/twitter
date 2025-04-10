@@ -1,6 +1,7 @@
 const {connectDB} =require("./config/database.js")
 require("dotenv").config();
-const {app}=require("./app")
+const {app}=require("./app");
+const HashTag = require("./models/hashtag.model.js");
 
 
 const PORT=process.env.PORT || 3001;
